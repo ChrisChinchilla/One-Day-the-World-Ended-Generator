@@ -1,6 +1,6 @@
 // TODO: Optimise
 
-exports.generateLexicon = function() {
+exports.generateLexicon = function () {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
@@ -21,7 +21,7 @@ exports.generateLexicon = function() {
   return grammar.flatten("#origin#");
 };
 
-exports.generateFeatures = function() {
+exports.generateFeatures = function () {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
@@ -37,7 +37,7 @@ exports.generateFeatures = function() {
   return grammar.flatten("#origin#");
 };
 
-exports.generateBackgrounds = function() {
+exports.generateBackgrounds = function () {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
@@ -53,7 +53,7 @@ exports.generateBackgrounds = function() {
   return grammar.flatten("#origin#");
 };
 
-exports.generateItems = function() {
+exports.generateItems = function () {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
@@ -69,7 +69,7 @@ exports.generateItems = function() {
   return grammar.flatten("#origin#");
 };
 
-exports.generateStats = function() {
+exports.generateStats = function () {
   let brainsStat = Math.floor(Math.random() * 5) + 1;
   let braunStat = Math.floor(Math.random() * 5) + 1;
   let charsimaStat = Math.floor(Math.random() * 5) + 1;
@@ -83,7 +83,7 @@ exports.generateStats = function() {
   return character;
 };
 
-exports.generateWorld = function() {
+exports.generateReason = function (usage) {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
@@ -106,10 +106,15 @@ exports.generateWorld = function() {
     ]
   });
   grammar.addModifiers(tracery.baseEngModifiers);
-  return grammar.flatten("#origin#");
+  // TODO: Future, break out to return in different format
+  if (usage == "app") {
+    return grammar.flatten("#origin#");
+  } else {
+    return grammar.flatten("#origin#");
+  }
 };
 
-exports.generateSetting = function() {
+exports.generateSetting = function () {
   let tracery = require("tracery-grammar");
 
   let dictionarySearch = require("./search.js");
